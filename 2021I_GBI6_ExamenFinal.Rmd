@@ -209,6 +209,34 @@ ggsave(
 ```{r reg_gen_exp}
 # Escriba aquí su función reg_gen_expression
 
+reg_gen_expression=function(df){
+  alm=combn(1:7,2)
+  points=NULL
+  df=df%>%select(gen,expresion_level)
+  for (i in 1:ncol(alm)) {
+    m=NULL
+      x=NULL
+      y=NULL
+      
+      m=c(alm[,i][1],alm[,i][2])
+      
+      
+  nom=as.character(levels(df[,1]))
+  
+  x=df[which(df$gen==nom[m[1]]),][,2]
+  y=df[which(df$gen==nom[m[2]]),][,2]
+  dft=data.frame(x,y)
+m=ggplot(data=dft,aes(x,y))+geom_point()+xlab(nom[m[1]])+ylab(nom[m[2]])
+ 
+   points[[i]]=m
+    
+  }
+  
+  
+
+  return(points)
+}
+reg_gen_expression(df_long)
 
 ```
 
