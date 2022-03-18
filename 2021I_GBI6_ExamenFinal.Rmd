@@ -189,8 +189,18 @@ cancertype_boxplots=tcga_boxplots(df_long)
 ### [0.5 PUNTOS] 2.3 Guarde en el subdirectorio ```result``` el tercer plot de la lista ```cancertype_boxplots``` con el nombre ```boxplot3.png```. La definición de a figura debe ser de 300dpi. 
 ```{r boxplot3}
 # Escriba el código para guardar la tercera figura de la lista. 
-
-
+setwd("C:/Users/DELL/Desktop/Semestre 6/Bioinformática/GBI6_Examenfinal/result")
+dir.create('./result')
+png("boxplot3.png")
+cancertype_boxplots[3]
+dev.off()
+pdf("boxplot3.pdf")
+cancertype_boxplots[3]
+dev.off()
+ggsave(
+  "boxplot3.pdf",
+  dpi=300
+  )
 ```
 
 
