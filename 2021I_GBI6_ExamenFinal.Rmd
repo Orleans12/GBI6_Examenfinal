@@ -155,13 +155,34 @@ Para esta pregunta tiene que utilizar la data ```df_long```.
 ```{r}
 # Escriba el código para crear la función tcga_boxplots
 
+library(tidyverse)
 
+tcga_boxplots=function(df1){
+  
+  
+  o=df1[,c(1,2)]
+  names(o)=c("fac1","ind1")
+  nom=as.character(levels(o[,1]))
+n=NULL
+
+ 
+ for (i in 1:length(levels(o$fac1))){
+   
+    j=ggplot(o%>%filter(fac1==nom[i]),aes(fac1,ind1))+geom_jitter()+geom_boxplot(alpha=0.3)+xlab("Tipo de Cancer")+ylab("gen")+
+theme_bw()+theme(legend.position='none')
+    n[[i]]=j
+
+}
+    
+  return(n)
+}
+tcga_boxplots(df_long)
 ```
 
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
 ```{r list_boxplots}
 # Escriba el código para generar la lista. 
-
+cancertype_boxplots=tcga_boxplots(df_long)
 
 ```
 
