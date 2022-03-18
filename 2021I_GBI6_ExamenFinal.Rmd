@@ -251,7 +251,15 @@ reg_genplots=reg_gen_expression(df_long)
 ### [0.5 PUNTOS] 2.6. Guarde en el subdirectorio ```result``` el onceavo plot de la lista ```reg_genplots``` con el nombre ```regresion11.pdf```. La definición de a figura debe ser de 300dpi. 
 ```{r reg11}
 # Escriba el código para guardar el onceavo plot. 
+setwd("C:/Users/DELL/Desktop/Semestre 6/Bioinformática/GBI6_Examenfinal/result")
 
+pdf("regresión11.pdf")
+reg_genplots[11]
+dev.off()
+ggsave(
+  "regresión11.pdf",
+  dpi=300
+  )
 ```
 
 
