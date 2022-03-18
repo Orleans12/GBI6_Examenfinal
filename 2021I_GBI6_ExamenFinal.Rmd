@@ -118,6 +118,8 @@ t=cbind(t,rep(x[,2],7))
 La tabla resultante tendrá tres columnas: ```dataset, gen, expresion_level```.  
 ```{r df_long}
 # Genere la data df_long 
+df_long=long_df(df)
+head(df_long)  #se generó correctamente la tabla :3
 
 ```
 
