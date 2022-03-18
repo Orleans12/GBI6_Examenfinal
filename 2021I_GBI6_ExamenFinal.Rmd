@@ -267,7 +267,11 @@ ggsave(
 
 ```{tex}
 # Esciba aquí su intepretación
+Boxplot:
+  Para esta gráfica se puede interpretar como, el 50% valores parece estar distribuidos por el gráfico de cajas, representando una distribución no normal con respecto a la media, asó como valores atípicos a considerar, tl vez debiéndose a sesgos al momento de tomar los datos. con respecto a la expresion del gen del cancer por GAPDH, se puede asumir que estos datos no brindan información confiable sobre la dinámica de expresión en este caso, por los valores outliers que presenta
 
+Regresion:
+  Para este gráfico se tiene los datos de expresion de los genes XBP1 y FN1, la nube de puntos no parece tener un patrón discernible, por lo cuál se puede inferir que estos genes no tienen relación alguna al momento de su expresión
 ```
 
 ## 3. CONTROL DE LA VERSIÓN [1 PUNTO]. Se verficará en ell repositorio de GitHub. 
