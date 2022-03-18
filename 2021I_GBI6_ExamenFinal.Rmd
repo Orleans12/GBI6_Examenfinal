@@ -133,6 +133,7 @@ df_long$gen=as.factor(df_long$gen)
 df_long$dataset=as.factor(df_long$dataset)
   df_long$expresion_level=as.numeric(df_long$expresion_level)
 descrip_table=descr(df_long%>%select(expresion_level,dataset)%>%group_by(dataset))
+descrip_table[1]
 ```
 
 ### [0.5 PUNTOS] 1.6 Interprete los resultados de la tabla resultante de la sección 1.5. 
@@ -140,7 +141,7 @@ descrip_table=descr(df_long%>%select(expresion_level,dataset)%>%group_by(dataset
 
 ```{tex}
 # Escriba aquí su interpretación 
-
+Genro una tabla con los los valores de cada elemento de la tabla característicos de media, desviación standar, mediana, skew que es la simetria, iqr que es el rango intercuartil, en resumen datos para hacer estadística y que me ayudarán para graficar los boxplots más adelante y la gráfica de puntos.
 ```
 
 
