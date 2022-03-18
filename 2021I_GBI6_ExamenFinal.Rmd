@@ -82,7 +82,8 @@ setwd("C:/Users/DELL/Desktop/Semestre 6/Bioinformática/GBI6_Examenfinal")
 
 ### [0.5 PUNTOS] 1.2. Cargue la data "mRNA_expr.csv"
 ```{r data}
-df <- "cargue la data"
+library(readr)
+df <- read_csv("mRNA_expr.csv")
 
 ```
 
