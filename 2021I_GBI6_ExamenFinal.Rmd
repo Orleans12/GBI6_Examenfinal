@@ -91,8 +91,26 @@ df <- read_csv("mRNA_expr.csv")
 
 ```{r funcion_long}
 # Escriba aquí la función long_df
+long_df=function(df) {
+  t=data.frame(id=1:1463)
+  x=as.matrix(df)
+t=cbind(t,rep(x[,2],7))
+ 
+ t$id=NULL
+ names(t)=names(df[,c(2)])
+ hugo=NULL
 
+ for (i in 3:9) {
+    hugo=c(hugo,x[,i])
+ }
+  k=names(df[,3:9])
+ k_name=c(rep(k[1],1463),rep(k[2],1463),rep(k[3],1463),rep(k[4],1463),rep(k[5],1463),rep(k[6],1463),rep(k[7],1463))
 
+ t=cbind(k_name,hugo,t)
+
+  names(t)=c("gen", "expresion_level", "dataset")
+   return(t)
+}
 ```
 
 
